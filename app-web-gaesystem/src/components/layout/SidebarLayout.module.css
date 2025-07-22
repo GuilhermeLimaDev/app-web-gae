@@ -1,0 +1,11 @@
+.appContainer {
+    display: flex;
+}
+
+.mainContent {
+    margin-left: 20vw;
+    width: 80vw;
+    min-height: 100vh;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}

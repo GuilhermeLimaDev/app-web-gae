@@ -1,0 +1,40 @@
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    margin-top: 10vh;
+    background-color: #090031;
+    color: #fff;
+    width: 80vw;
+    height: 8vh;
+}
+
+.buttons{
+    margin: 0px 30px;
+}
+
+.buttons button{
+    padding: 10px 15px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.buttonA{
+    margin: 0px 10px;
+    border-style: none;
+}
+
+.buttonB{
+    background-color: transparent;
+    border-style: solid inset;
+    border-color: #fff;
+    color: #fff;
+}
+
+select{
+    border-style: none;
+    padding: 10px 15px;
+    border-radius: 7px;
+    margin: 0px 20px;
+}
