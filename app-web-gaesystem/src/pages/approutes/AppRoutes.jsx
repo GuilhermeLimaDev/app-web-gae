@@ -1,20 +1,20 @@
-import { Route, Routes } from 'react-router-dom'
-import Homepage from '../homepage/Homepage'
-import Reports from '../reports/Reports'
-import ProblemDetails from '../problemdetails/ProblemDetails'
-import SidebarLayout from '../../components/layout/SidebarLayout'
+import { Route, Routes } from "react-router-dom";
+import Homepage from "../homepage/Homepage";
+import Reports from "../reports/Reports";
+import ProblemDetails from "../problemdetails/ProblemDetails";
+import Header from "../../components/header/Header";
 
 const AppRoutes = () => {
-    return (
-        <Routes>
-            <Route element={<SidebarLayout/>}>
-                <Route path='/homepage' element={<Homepage/>}/>
-                <Route path='/reports' element={<Reports/>}/>
-            </Route>
+  return (
+    <>
+      <Header />
+      <Routes>
+        <Route path="/homepage" element={<Homepage />} />
+        <Route path="/reports" element={<Reports />} />
+        <Route path="reports/details/:id" element={<ProblemDetails />} />
+      </Routes>
+    </>
+  );
+};
 
-            <Route path='/details' element={<ProblemDetails/>}/>
-        </Routes>
-    )
-}
-
-export default AppRoutes
+export default AppRoutes;

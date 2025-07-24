@@ -1,12 +1,19 @@
 .problem {
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    gap: 5%;
-    padding: 0% 5%;
-    margin: 20% 0;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  gap: 5%;
+  padding: 0% 5%;
+  margin: 20% 0;
 }
 
-.content{
-    display: flex;
-    flex-direction: column;
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .problem {
+    grid-template-columns: 100%;
+    gap: 2%;
+  }
 }

@@ -1,14 +1,27 @@
 .headerContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(168, 168, 168);
-    box-shadow: 0 5px 10px #0000004f;
-    color: white;
-    position: fixed;
-    width: 80vw;
-    margin: 0px;
-    padding: 0px;
-    height: 10vh
+  display: flex;
+  background-color: #f3f3f3;
+  position: fixed;
+  width: 100vw;
+  height: 5vh;
+}
+.button {
+  color: #090031;
+  text-decoration: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.selecionado {
+  color: #090031;
+  text-decoration: underline;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .headerContent {
+    position: static; /* Deixa o elemento fluir normalmente */
+    width: 100%;
+  }
 }

@@ -1,40 +1,77 @@
-.content{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    margin-top: 10vh;
-    background-color: #090031;
-    color: #fff;
-    width: 80vw;
-    height: 8vh;
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: fixed;
+  background-color: #090031;
+  color: #fff;
+  width: 100vw;
+  height: auto;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  gap: 10px;
+  z-index: 10;
+  overflow-y: auto;
+  max-height: 90vh;
+  top: 5vh;
 }
 
-.buttons{
-    margin: 0px 30px;
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0px 10px;
 }
 
-.buttons button{
-    padding: 10px 15px;
-    border-radius: 7px;
-    cursor: pointer;
+.buttons button {
+  padding: 10px 15px;
+  border-radius: 7px;
+  cursor: pointer;
+  flex: 1;
 }
 
-.buttonA{
-    margin: 0px 10px;
-    border-style: none;
+.buttonA {
+  margin: 0px 5px;
+  border-style: none;
 }
 
-.buttonB{
-    background-color: transparent;
-    border-style: solid inset;
-    border-color: #fff;
-    color: #fff;
+.buttonB {
+  background-color: transparent;
+  border-style: solid;
+  border-color: #fff;
+  color: #fff;
 }
 
-select{
-    border-style: none;
-    padding: 10px 15px;
-    border-radius: 7px;
-    margin: 0px 20px;
+select {
+  border-style: none;
+  padding: 10px 15px;
+  border-radius: 7px;
+  margin: 0px 10px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .content {
+    position: static; /* Deixa o elemento fluir normalmente */
+    width: 100%;
+    left: 0;
+    top: auto;
+    transform: none;
+    max-height: none;
+    overflow: visible;
+    padding: 15px 10px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .buttons button,
+  select {
+    width: 100%;
+    max-width: 100%;
+    margin: 5px 0;
+  }
 }
