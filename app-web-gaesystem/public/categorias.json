@@ -1,0 +1,17 @@
+{
+    "categorias": [
+      {
+        "id": 1,
+        "name": "Problemas Hidraulicos"
+      },
+      {
+        "id": 2,
+        "name": "Problemas Elétricos"
+      },
+      {
+        "id": 3,
+        "name": "Problemas Estruturais"
+      }
+    ]
+  }
+  
