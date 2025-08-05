@@ -1,0 +1,17 @@
+{
+    "locais": [
+      {
+        "id": 1,
+        "name": "Laboratorio 1 andar 1"
+      },
+      {
+        "id": 2,
+        "name": "Sala 23 corredor 2"
+      },
+      {
+        "id": 3,
+        "name": "Banheiro Térreo Laboratorio"
+      }
+    ]
+  }
+  
