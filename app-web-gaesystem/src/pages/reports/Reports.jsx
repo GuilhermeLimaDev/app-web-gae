@@ -1,11 +1,39 @@
+import { useEffect, useState } from "react";
 import ReportFilters from "../../components/filters/ReportFilters";
-import Header from "../../components/header/Header";
 import Problem from "../../components/problems/Problems";
 import styles from "./Reports.module.css";
+import problemService from "../../services/ProblemsService.js";
+import CategoryService from "../../services/CategoryService.js";
+import LocalService from "../../services/LocalService.js";
 const Reports = () => {
-  const handleFiltrar = () => {
-    alert("clicou e filtrou");
+  const handleFiltrar = ({ categoria, local, status }) => {
+    console.log(categoria, local, status);
   };
+
+  const [categorias, setCategorias] = useState([]);
+  const [locais, setLocais] = useState([]);
+  const [problemasTeste, setProblemas] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const problemas = await problemService.getProblems();
+        const categorias = await CategoryService.getCategorys();
+        const locais = await LocalService.getLocais();
+
+        setProblemas(problemas.data.problemas);
+        setCategorias(categorias.data.categorias);
+        setLocais(locais.data.locais);
+      } catch (e) {
+        console.error("Erro ao buscar dados:", e);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  console.log(problemasTeste);
+  console.log(categorias);
 
   return (
     <div className={styles.content}>
