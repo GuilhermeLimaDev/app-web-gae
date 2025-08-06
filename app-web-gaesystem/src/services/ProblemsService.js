@@ -6,5 +6,13 @@ const getProblems = () => {
   return http.get(teste);
 };
 
-const ProblemService = { getProblems };
+const getProblemsById = (id) => {
+  return http.get(`${teste}/${id}`);
+};
+
+const getPhotosOfProblem = (id) => {
+  return http.get(`${route}/photos/${id}`);
+};
+
+const ProblemService = { getProblems, getProblemsById, getPhotosOfProblem };
 export default ProblemService;
