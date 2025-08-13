@@ -3,7 +3,7 @@ const route = "local"; //producao
 const teste = "locais.json"; //desenvolvimento com lista local
 
 const getLocais = () => {
-  return http.get(teste);
+  return http.get(route);
 };
 
 const LocalService = { getLocais };
