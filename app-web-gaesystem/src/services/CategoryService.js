@@ -3,7 +3,7 @@ const route = "category"; //producao
 const teste = "categorias.json"; //desenvolvimento com lista local
 
 const getCategorys = () => {
-  return http.get(teste);
+  return http.get(route);
 };
 
 const CategoryService = { getCategorys };
