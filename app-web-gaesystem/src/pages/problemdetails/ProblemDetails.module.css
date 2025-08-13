@@ -1,0 +1,67 @@
+.main {
+  min-height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.informations {
+  background-color: #dfdcdc;
+  width: 70%;
+  height: 60vh;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.actions {
+  width: 70%;
+  background-color: #090031;
+  color: #ffffff;
+  margin: 10px 0px;
+  height: 5vh;
+}
+
+.showcaseImage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageSelect {
+  height: 80%;
+  width: 90%;
+}
+
+.listImages {
+  width: 100%;
+  text-align: center;
+}
+
+.listImages img {
+  margin: 5px 2%;
+  padding: 2px;
+  border-radius: 7px;
+  width: 10%;
+}
+
+.selected {
+  border: 2px solid #090031;
+}
+
+.notSelected {
+  border: none;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.infos h2,
+.infos h3 {
+  text-transform: uppercase;
+}
