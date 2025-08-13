@@ -21,9 +21,9 @@ const Reports = () => {
         const categorias = await CategoryService.getCategorys();
         const locais = await LocalService.getLocais();
 
-        setProblemas(problemas.data.problemas);
-        setCategorias(categorias.data.categorias);
-        setLocais(locais.data.locais);
+        setProblemas(problemas.data);
+        setCategorias(categorias.data);
+        setLocais(locais.data);
       } catch (e) {
         console.error("Erro ao buscar dados:", e);
       }
