@@ -1,0 +1,37 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 100vh;
+  background-color: #f7f7f7;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+
+  /* Esconde inicialmente */
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.open {
+  transform: translateX(0%);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.closeBtn {
+  background-color: #ff5c5c;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.content {
+  margin-top: 20px;
+}
