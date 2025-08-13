@@ -1,0 +1,108 @@
+.container {
+  height: 100vh; /* Ocupa a altura total da viewport */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  background-color: #fdfdfd;
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+}
+
+.sendSection {
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
+  flex-shrink: 0; /* mantém altura fixa */
+}
+
+.textarea {
+  width: 100%;
+  resize: vertical;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  color: #2d2d2d;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+.textarea:focus {
+  border-color: #9360ff;
+  outline: none;
+}
+
+.button {
+  margin-top: 10px;
+  background-color: #9360ff;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #7a4edf;
+}
+
+.messageSection {
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
+
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* ocupa o resto do espaço */
+  min-height: 0; /* importante para scroll funcionar */
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #2d2d2d;
+  flex-shrink: 0;
+}
+
+.messageList {
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-right: 8px;
+  min-height: 0; /* importante para scroll funcionar */
+  scrollbar-width: thin;
+  scrollbar-color: #9360ff #e0e0e0;
+  margin-bottom: 100px;
+}
+
+.messageItem {
+  background-color: #f3f3f3;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border-left: 4px solid #9360ff;
+}
+
+.messageSender {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111;
+}
+
+.messageText {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: #444;
+}
