@@ -2,10 +2,10 @@ import axios from "axios";
 
 const URL = "https://restapi.santosdev.site/";
 const teste = "../../../public/";
-const testBase = "localhost:8080/";
+const testBase = "http://localhost:8080/";
 
 const connection = axios.create({
-  baseURL: URL,
+  baseURL: testBase,
 });
 
 console.log("Conexão", connection());

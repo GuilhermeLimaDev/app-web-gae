@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./LoginForm.module.css";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { useUser } from "../../context/UserContext"; // Importando o hook useUser
 
 const LoginForm = () => {
@@ -23,7 +23,7 @@ const LoginForm = () => {
         name: username,
         password: password,
         type: "ALUNO",
-        id: 1,
+        id: 3,
       };
       login(newUser);
     }

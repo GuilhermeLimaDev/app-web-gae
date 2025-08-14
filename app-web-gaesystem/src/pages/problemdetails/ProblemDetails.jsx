@@ -70,7 +70,7 @@ const ProblemDetails = () => {
         <button>Resolver Problema</button>
       </section>
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)}>
-        <SenderMessage />
+        <SenderMessage id={data.id}/>
       </Sidebar>
     </main>
   );

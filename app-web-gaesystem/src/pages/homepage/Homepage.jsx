@@ -2,7 +2,7 @@ import ReportCarousel from "../../components/carrossel/Carrossel";
 import { useUser } from "../../context/UserContext";
 import { useEffect, useState } from "react";
 import ProblemService from "../../services/ProblemsService";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 const Homepage = () => {
   const { user } = useUser();
