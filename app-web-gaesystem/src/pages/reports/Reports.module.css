@@ -1,19 +1,35 @@
 .problem {
+  width: 90vw;
   display: grid;
   grid-template-columns: 30% 30% 30%;
   gap: 5%;
   padding: 0% 5%;
-  margin: 20% 0;
+  margin-top: 5%;
 }
 
 .content {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-@media (max-width: 768px) {
+.searchBar {
+  margin-top: 20vh;
+}
+
+@media (max-width: 1280px) {
+  .problem {
+    grid-template-columns: 50% 50%;
+    gap: 2%;
+  }
+}
+
+@media (max-width: 868px) {
   .problem {
     grid-template-columns: 100%;
     gap: 2%;
+  }
+  .searchBar {
+    margin-top: 20vh;
   }
 }

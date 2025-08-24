@@ -1,0 +1,98 @@
+.container {
+  padding: 1.5rem;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+  max-width: 100%;
+}
+
+.assignmentSection,
+.listSection {
+  margin-bottom: 2rem;
+}
+
+h2 {
+  color: #1a1a1a;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.assignButton {
+  background-color: #9360ff;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.assignButton:hover {
+  background-color: #7e49e5;
+}
+
+.userList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.userItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  background-color: #f9f9f9;
+}
+
+.removeButton {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.removeButton:hover {
+  background-color: #c0392b;
+}
+
+.emptyText {
+  color: #888;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 600px) {
+  .inputGroup {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .select {
+    flex: 1;
+  }
+
+  .assignButton {
+    margin-left: 1rem;
+    width: auto;
+  }
+}

@@ -5,7 +5,7 @@ const teste = "../../../public/";
 const testBase = "http://localhost:8080/";
 
 const connection = axios.create({
-  baseURL: testBase,
+  baseURL: URL,
 });
 
 console.log("Conexão", connection());

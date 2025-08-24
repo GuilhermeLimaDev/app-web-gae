@@ -1,67 +1,157 @@
 .main {
-  min-height: 95vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f5f5f5; /* fundo claro */
 }
 
+/* Container fixo do problema */
 .informations {
-  background-color: #dfdcdc;
-  width: 70%;
-  height: 60vh;
+  background-color: #ffffff;
+  width: 80%; /* largura fixa maior */
+  height: 40%; /* altura fixa */
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-.actions {
-  width: 70%;
-  background-color: #090031;
-  color: #ffffff;
-  margin: 10px 0px;
-  height: 5vh;
-}
-
-.showcaseImage {
-  width: 100%;
+/* Showcase das imagens */
+.showcaseImages {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 15px;
+  background-color: #f0f0f0;
 }
 
 .imageSelect {
-  height: 80%;
-  width: 90%;
+  width: 100%;
+  max-width: 400px;
+  height: 300px; /* altura fixa da imagem principal */
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #9360ff;
+  margin-bottom: 10px;
 }
 
 .listImages {
-  width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .listImages img {
-  margin: 5px 2%;
-  padding: 2px;
-  border-radius: 7px;
-  width: 10%;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, border 0.2s;
+}
+
+.listImages img:hover {
+  transform: scale(1.1);
 }
 
 .selected {
-  border: 2px solid #090031;
+  border: 2px solid #9360ff;
 }
 
 .notSelected {
-  border: none;
+  border: 2px solid transparent;
 }
 
+/* Informações do problema */
 .infos {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  padding: 20px;
 }
 
-.infos h2,
-.infos h3 {
-  text-transform: uppercase;
+.infos h2 {
+  color: #9360ff;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.infos h3,
+.infos h4 {
+  color: #333;
+  margin: 5px 0;
+}
+
+.infos p {
+  color: #555;
+  line-height: 1.4;
+  margin-top: 10px;
+}
+
+/* Ações */
+.actions {
+  width:75%; /* mesma largura do container */
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start;
+  padding: 15px 20px;
+  background-color: #090031;
+  color: #fff;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.actions button {
+  background-color: #9360ff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.actions button:hover {
+  background-color: #7a4ccc;
+  transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 960px) {
+  .informations,
+  .actions {
+    width: 90%;
+  }
+
+  .informations {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .imageSelect {
+    max-width: 100%;
+    height: 250px;
+  }
+
+  .listImages img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions button {
+    width: 100%;
+    margin-bottom: 8px;
+  }
 }

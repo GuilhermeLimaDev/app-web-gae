@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #6f42c1; /* Roxo */
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: transparent;
+  font-size: 14px;
+  text-align: left;
+  transition: background 0.2s, color 0.2s;
+  color: #333;
+}
+
+.navButton:hover {
+  background-color: rgba(111, 66, 193, 0.1); /* Roxo leve */
+  color: #6f42c1;
+}
+
+.active {
+  background-color: #6f42c1;
+  color: #fff;
+}
+
+.main {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #6f42c1;
+}

@@ -1,0 +1,57 @@
+.container {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  color: #5a189a;
+  margin-bottom: 1rem;
+}
+
+/* Formulário */
+.form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.form input {
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  flex: 1 1 200px;
+}
+
+.form button {
+  padding: 0.6rem 1.2rem;
+  background-color: #5a189a;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form button:hover {
+  background-color: #7b2cbf;
+}
+
+/* Tabela */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 0.6rem;
+  text-align: left;
+}
+
+.table th {
+  background-color: #5a189a;
+  color: #fff;
+}

@@ -6,7 +6,7 @@ const ReportCarousel = ({ reports, title }) => {
   const carouselRef = useRef(null);
 
   useEffect(() => {
-    if (!reports || reports.length <= 1) return; // Não roda carrossel se 0 ou 1 item
+    if (!reports || reports.length <= 1) return;
 
     const container = carouselRef.current;
     let isResetting = false;
@@ -48,7 +48,9 @@ const ReportCarousel = ({ reports, title }) => {
             />
           ))
         ) : (
-          <>sem problemas</>
+          <div>
+            <p>Sem problemas aqui, volte mais tarde!</p>
+          </div>
         )}
       </div>
     </div>

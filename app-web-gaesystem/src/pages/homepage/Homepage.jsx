@@ -14,7 +14,7 @@ const Homepage = () => {
       try {
         const receiverGeralProblems = await ProblemService.getProblems();
         const receiverAssignmentsProblems =
-          await ProblemService.getProblemsOfEmployee(1);
+          await ProblemService.getProblemsOfEmployee(user.id);
 
         setGeralProblems(receiverGeralProblems.data);
         setAssignmentsProblems(receiverAssignmentsProblems.data);
@@ -26,9 +26,6 @@ const Homepage = () => {
     fetchData();
   }, []);
 
-  console.log("usuario", user);
-  console.log(assignmentsProblems);
-  console.log(geralProblems);
   return (
     <main>
       <h1>Olá, </h1>

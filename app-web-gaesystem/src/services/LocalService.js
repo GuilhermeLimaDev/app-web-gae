@@ -6,6 +6,10 @@ const getLocais = () => {
   return http.get(route);
 };
 
-const LocalService = { getLocais };
+const create = (form) => {
+  return http.post(route, form);
+};
+
+const LocalService = { getLocais, create };
 
 export default LocalService;

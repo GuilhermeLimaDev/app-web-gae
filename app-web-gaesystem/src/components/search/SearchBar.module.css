@@ -1,0 +1,44 @@
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-width: 400px;
+  max-width: 400px;
+}
+
+.searchBar input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.searchBar input:focus {
+  border-color: #9360ff; /* destaque roxo */
+  box-shadow: 0 0 5px rgba(147, 96, 255, 0.5);
+}
+
+.searchBar button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #9360ff;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.searchBar button:hover {
+  background-color: #7a4ccc;
+}
+
+@media (max-width: 768px) {
+  .searchBar {
+    margin-top: 10vh;
+  }
+}

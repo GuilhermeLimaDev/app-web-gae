@@ -1,10 +1,20 @@
 .card {
-  background-color: rgb(175, 175, 175);
-  color: #fff;
+  background: #ffffff;
+  color: #333;
   width: 100%;
+  min-width: 400px;
   display: flex;
   height: 25vh;
-  border-radius: 7px;
+  border-radius: 12px;
+  border: 2px solid #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  border-color: #9360ff;
 }
 
 .informations {
@@ -13,34 +23,79 @@
   width: 80%;
   justify-content: center;
   margin: 0 5%;
+  gap: 4px;
+}
+
+.informations h2 {
+  font-size: 1.4rem;
+  margin: 0;
+  color: #9360ff; /* destaque no título */
+}
+
+.informations h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+  color: #555;
+}
+
+.informations h4 {
+  font-size: 1rem;
+  margin: 0;
+  color: #666;
+}
+
+.informations p {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #9360ff; /* status em roxo */
 }
 
 .nav {
   width: 20%;
   border: none;
-  border-radius: 7px;
+  border-left: 2px solid #f0f0f0;
+  border-radius: 0 12px 12px 0;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .nav img {
-  width: 15px;
+  width: 18px;
+  filter: invert(36%) sepia(95%) saturate(6218%) hue-rotate(245deg) brightness(94%) contrast(94%);
+  transition: transform 0.2s ease;
 }
 
 .nav:hover {
-  background-color: rgb(214, 214, 214);
+  background: rgba(147, 96, 255, 0.08);
+  border-color: #9360ff;
+}
+
+.nav:hover img {
+  transform: translateX(4px);
 }
 
 @media (max-width: 768px) {
   .card {
     flex-direction: column;
-    height: 30vh;
+    height: auto;
+    min-height: 30vh;
   }
   .informations {
     width: 100%;
-    height: 80%;
+    height: auto;
+    padding: 12px 0;
   }
   .nav {
     width: 100%;
     height: 20%;
+    border-left: none;
+    border-top: 2px solid #f0f0f0;
+    border-radius: 0 0 12px 12px;
   }
 }

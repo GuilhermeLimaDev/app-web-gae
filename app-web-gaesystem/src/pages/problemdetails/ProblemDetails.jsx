@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ProblemService from "../../services/ProblemsService";
-import Sidebar from "../../components/sidebar/Sidebar.jsx"; // 👈 importa aqui
+import Sidebar from "../../components/sidebar/Sidebar.jsx";
 import styles from "./ProblemDetails.module.css";
 import SenderMessage from "../sendmessage/SenderMessage.jsx";
+import UserAssignment from "../assignUser/AssignUser.jsx";
+import { useUser } from "../../context/UserContext.jsx";
 
 const ProblemDetails = () => {
   const params = useParams();
@@ -12,7 +14,9 @@ const ProblemDetails = () => {
   const [images, setImages] = useState({ photosUrl: [] });
   const [imageSelected, setImageSelected] = useState();
   const [data, setData] = useState([]);
-  const [sidebarOpen, setSidebarOpen] = useState(false); // 👈 novo estado
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [activeSidebarContent, setActiveSidebarContent] = useState(null); // 👈 controla o conteúdo da sidebar
+  const user = useUser();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,6 +36,11 @@ const ProblemDetails = () => {
 
     fetchData();
   }, []);
+
+  const openSidebarWith = (contentType) => {
+    setActiveSidebarContent(contentType);
+    setSidebarOpen(true);
+  };
 
   return (
     <main className={styles.main}>
@@ -65,12 +74,20 @@ const ProblemDetails = () => {
       </section>
 
       <section className={styles.actions}>
-        <button>Atribuir Funcionário</button>
-        <button onClick={() => setSidebarOpen(true)}>Enviar Mensagem</button>
+        <button onClick={() => openSidebarWith("assign")}>
+          Atribuir Funcionário
+        </button>
+        <button onClick={() => openSidebarWith("message")}>
+          Enviar Mensagem
+        </button>
         <button>Resolver Problema</button>
       </section>
+
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)}>
-        <SenderMessage id={data.id}/>
+        {activeSidebarContent === "message" && <SenderMessage id={data.id} />}
+        {activeSidebarContent === "assign" && (
+          <UserAssignment id={data.id} user={user.id} />
+        )}
       </Sidebar>
     </main>
   );

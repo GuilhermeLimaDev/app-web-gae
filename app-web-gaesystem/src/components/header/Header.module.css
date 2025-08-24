@@ -4,6 +4,8 @@
   position: fixed;
   width: 100vw;
   height: 5vh;
+  align-items: center;
+  justify-content: space-between;
 }
 .button {
   color: #090031;
@@ -19,9 +21,25 @@
   cursor: pointer;
 }
 
+.logoutButton {
+  padding: 0.4rem 1rem;
+  background-color: #d90429;
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+  margin-right: 30px;
+}
+
+.logoutButton:hover {
+  background-color: #a6031f;
+}
+
 @media (max-width: 768px) {
   .headerContent {
-    position: static; /* Deixa o elemento fluir normalmente */
+    position: static;
     width: 100%;
   }
 }
