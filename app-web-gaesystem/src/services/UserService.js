@@ -26,7 +26,8 @@ const create = (form) => {
   return http.post(route, form);
 };
 
-const UserService = { login, getAll, getById, update, desatived, create };
+
+const UserService = { login, getAll, getById, update, desatived, create};
 
 export default UserService;
 ///implementar logica depois

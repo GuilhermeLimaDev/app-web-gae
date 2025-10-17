@@ -8,6 +8,4 @@ const connection = axios.create({
   baseURL: URL,
 });
 
-console.log("Conexão", connection());
-
 export default connection;

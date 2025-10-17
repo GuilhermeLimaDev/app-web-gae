@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <header className={styles.headerContent}>
       <div>
-        <label>Bem vindo, {user.name}</label>
+
         <Link
           to={"/homepage"}
           className={url == "homepage" ? styles.selecionado : styles.button}

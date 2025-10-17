@@ -16,7 +16,7 @@ const ProblemDetails = () => {
   const [data, setData] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeSidebarContent, setActiveSidebarContent] = useState(null); // 👈 controla o conteúdo da sidebar
-  const user = useUser();
+  const {user} = useUser();
 
   useEffect(() => {
     const fetchData = async () => {
