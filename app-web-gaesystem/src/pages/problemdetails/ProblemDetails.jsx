@@ -15,8 +15,8 @@ const ProblemDetails = () => {
   const [imageSelected, setImageSelected] = useState();
   const [data, setData] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [activeSidebarContent, setActiveSidebarContent] = useState(null); // 👈 controla o conteúdo da sidebar
-  const {user} = useUser();
+  const [activeSidebarContent, setActiveSidebarContent] = useState(null); 
+  const { user } = useUser();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,11 +35,36 @@ const ProblemDetails = () => {
     };
 
     fetchData();
-  }, []);
+  }, [id]);
 
   const openSidebarWith = (contentType) => {
     setActiveSidebarContent(contentType);
     setSidebarOpen(true);
+  };
+
+  // 🔧 Função para mudar o status do problema
+  const changeStatus = async (newStatus) => {
+    try {
+      const response = await fetch(
+        `https://restapi.santosdev.site/problemas/changestatus/${id}/${newStatus}`,
+        {
+          method: "PUT", // ou "POST" se seu backend usar isso
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Erro ao mudar o status");
+      }
+
+      // Atualiza o status localmente sem precisar recarregar
+      setData((prevData) => ({ ...prevData, status: newStatus }));
+
+      alert(`Status alterado para: ${newStatus.replace("_", " ")}`);
+    } catch (error) {
+      console.error("Erro:", error);
+      alert("Falha ao mudar status do problema.");
+    }
   };
 
   return (
@@ -68,19 +93,23 @@ const ProblemDetails = () => {
           <h4>
             {data.student} - {data.student_id}
           </h4>
-          <h4>{data.status}</h4>
+          <h4>Status: {data.status}</h4>
           <p>{data.description}</p>
         </div>
       </section>
 
       <section className={styles.actions}>
-        <button onClick={() => openSidebarWith("assign")}>
-          Atribuir Funcionário
-        </button>
         <button onClick={() => openSidebarWith("message")}>
           Enviar Mensagem
         </button>
-        <button>Resolver Problema</button>
+
+        {/* 🔘 Botões de ação de status */}
+        <button onClick={() => changeStatus("resolvido")}>
+          Resolver Problema
+        </button>
+        <button onClick={() => changeStatus("em_analise")}>
+          Mudar Status para Análise
+        </button>
       </section>
 
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)}>
